@@ -4,7 +4,7 @@
     <h1>{{ msg }}</h1>
     <h2>Learning basic Vue.js with Vuex State Management</h2>
     <br>
-    <router-link :to="'blog'" class="btn btn-success btn-lg">
+    <router-link :to="'blogs'" class="btn btn-success btn-lg">
       Blog Sample
     </router-link>
   </div>

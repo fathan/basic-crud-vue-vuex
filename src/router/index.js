@@ -18,17 +18,17 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/blog',
+      path: '/blogs',
       name: 'BlogIndex',
       component: BlogIndex
     },
     {
-      path: '/blog/new',
+      path: '/blogs/new',
       name: 'BlogNew',
       component: BlogNew
     },
     {
-      path: '/blog/edit/:id',
+      path: '/blogs/edit/:id',
       name: 'BlogEdit',
       component: BlogEdit
     },

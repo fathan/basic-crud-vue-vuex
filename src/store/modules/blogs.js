@@ -4,9 +4,7 @@ import * as mutationType from '../mutation_types'
 // initial state
 const state = {
   all: [],
-  form_add: false,
-  message: null,
-  form_edit: null
+  message: null
 }
 
 // initial getters
@@ -16,9 +14,7 @@ const getters = {
       return a['id'] < b['id']
     })
   },
-  formAdd: state => state.form_add,
-  messages: state => state.message,
-  formEdit: state => state.form_edit
+  messages: state => state.message
 }
 
 // initial actions
@@ -34,27 +30,28 @@ const actions = {
     blogsApi.saveBlog(data, (response) => {
       if (response.status === 201) {
         state.message = 'Data success has saved'
-        context.dispatch('getAllBlogs')
       }
+      context.dispatch('getAllBlogs')
     })
   },
   // update blog
   updateBlog (context, blog) {
     blogsApi.updateBlog(blog.id, blog, (response) => {
       if (response.status === 201) {
-        context.dispatch('getAllBlogs')
+        state.message = 'Data success has updated'
       }
+      context.dispatch('getAllBlogs')
     })
   },
   // delete blog
   destroy (context, idblog) {
-    let conf = window.alert('Are you sure delete this Data?')
-
+    let conf = window.confirm('Are you sure delete this Data?')
     if (conf) {
       blogsApi.deleteBlog(idblog, (response) => {
         if (response.status === 200) {
-          context.dispatch('getAllBlogs')
+          state.message = 'Data success has deleted'
         }
+        context.dispatch('getAllBlogs')
       })
     }
   }

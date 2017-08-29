@@ -2,11 +2,18 @@
   <div id='blog-index'>
     <div class="row">
       <div class="col-md-12">
+        <div class="alert alert-success">
+          {{ messages }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <div class="pull-left">
           <h3><strong>LIST DATA BLOG ALL</strong></h3>
         </div>
         <div class="pull-right">
-          <router-link :to="'/blog/new'" class="btn btn-lg btn-default">
+          <router-link :to="'/blogs/new'" class="btn btn-lg btn-default">
             New Data
           </router-link>
           <router-link :to="'/'" class="btn btn-lg btn-primary">
@@ -42,9 +49,9 @@
             </label>
           </td>
           <td>
-            <button @click="deleteData(blog)" class="btn btn-sm btn-warning">
+            <router-link v-bind:to="'/blogs/edit/' + blog.id" class="btn btn-sm btn-warning">
               Edit Data
-            </button>
+            </router-link>
             <button @click="destroy(blog.id)" class="btn btn-sm btn-danger">
               Delete Data
             </button>
@@ -56,7 +63,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'blog-index',
@@ -64,6 +71,9 @@ export default {
     blogs: 'allBlogs',
     messages: 'messages'
   }),
+  methods: mapActions([
+    'destroy'
+  ]),
   created () {
     this.$store.dispatch('getAllBlogs')
   }

@@ -26,14 +26,16 @@
       "title": "Lorem ipsum dolor sit amet consectetur",
       "author": "Andi",
       "category": "Economy",
-      "status": false
+      "status": "1",
+      "description": "sasasasa"
     },
     {
       "id": 5,
       "title": "Lorem ipsum dolor sit amet consectetur",
-      "author": "Hera Septy Gandini",
+      "author": "Hera Septy Gandini, S.Pd",
       "category": "Education",
-      "status": true
+      "status": "1",
+      "description": "sasasaa"
     }
   ]
 }
