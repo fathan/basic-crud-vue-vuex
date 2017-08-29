@@ -1,0 +1,39 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "author": "Fathan Rohman",
+      "category": "Technology",
+      "status": true
+    },
+    {
+      "id": 2,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "author": "Febryan Setiawan",
+      "category": "Science",
+      "status": true
+    },
+    {
+      "id": 3,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "author": "Doni",
+      "category": "Technology",
+      "status": true
+    },
+    {
+      "id": 4,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "author": "Andi",
+      "category": "Economy",
+      "status": false
+    },
+    {
+      "id": 5,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "author": "Hera Septy Gandini",
+      "category": "Education",
+      "status": true
+    }
+  ]
+}
