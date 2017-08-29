@@ -56,28 +56,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'blog-index',
-  data () {
-    return {
-      blogs: {
-        id: '',
-        title: '',
-        author: '',
-        category: '',
-        status: ''
-      }
-    }
-  },
-  computer: mapGetters({
+  computed: mapGetters({
     blogs: 'allBlogs',
     messages: 'messages'
   }),
-  methods: mapActions(
-    'destroy'
-  ),
   created () {
     this.$store.dispatch('getAllBlogs')
   }
